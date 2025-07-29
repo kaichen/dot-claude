@@ -13,18 +13,19 @@ Generate a series of git commits simulating past 8 hours of coding activity. Eac
 
 ### Requirements
 1. Generate 7 commits with timestamps spread across the past 8 hours
-2. Each commit should make small, believable changes (e.g., add/remove comments, adjust whitespace, rename and rename back variables)
-3. Ensure all changes are reversed or cancelled out by the end
-4. Use realistic commit messages that sound like actual development work
-5. Set commit timestamps using `GIT_COMMITTER_DATE` and `GIT_AUTHOR_DATE`
-6. Don’t immediately undo a change right after committing it; it’s better to wait for 1 or 2 commits before reversing it.  
-7. You can combine several undo changes into a single commit.
-8. Keep changes in a single file under 10% of that file’s existing lines.  
-9. Make sure the new code is high-quality and useful.  
-10. Don’t break any existing functionality.  
-11. Keep the code style consistent.  
-12. Don’t add any new comments.  
-13. Don’t delete any existing comments.
+2. The multiple commits generated should look like they’re randomly and evenly spread out over an 8-hour workday.
+3. Each commit should make small, believable changes
+4. Ensure all changes are reversed or cancelled out by the end
+5. Use realistic commit messages that sound like actual development work
+6. Set commit timestamps using `GIT_COMMITTER_DATE` and `GIT_AUTHOR_DATE`
+7. Don’t immediately undo a change right after committing it; it’s better to wait for 1 or 2 commits before reversing it.  
+8. You can combine several undo changes into a single commit.
+9. Keep changes in a single file under 10% of that file’s existing lines.  
+10. Make sure the new code is high-quality and useful.  
+11. Don’t break any existing functionality.  
+12. Keep the code style consistent.  
+13. Don’t add any new comments.  
+14. Don’t delete any existing comments.
 
 ### Suggested changes pattern:
 - Add 5~8 debug log print in serval functions → Remove in "cleanup" commit
@@ -41,6 +42,7 @@ Generate a series of git commits simulating past 8 hours of coding activity. Eac
 3. Make another change (possibly reverting previous)
 4. Continue pattern ensuring final state matches initial state
 5. Verify `git status` shows no changes at the end
+6. Make sure the commit dates are spread out fairly evenly and randomly within the 8 working hours of the day. If they’re too clustered, you’ll need to tweak them using `git filter-repo --commit-callback` commands
 
 Use environment variables for timestamps:
 ```bash
