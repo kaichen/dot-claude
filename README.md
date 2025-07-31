@@ -4,7 +4,17 @@ My claude code setup.
 
 ## How to install
 
-Use my claude code toolkit https://github.com/kaichen/claco or download the file to your .claude folder.
+Download the markdown file to your .claude folder.
+
+Or use my claude code toolkit https://github.com/kaichen/claco.
+
+## Commands
+
+### Fake Git Commit
+
+You can generate multiple commits that look like you've been working hard, each with random changes and random commit messages. It can even stretch out to look like a whole day’s worth of "sporadic work."  
+
+In the end, these commits don’t actually affect the codebase—they cancel each other out, so the final diff is zero.
 
 ### Import Settings
 
